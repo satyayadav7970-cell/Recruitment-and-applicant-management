@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireTrack – Recruitment &amp; Applicant Management System</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="logo" href="#home">Hire<span>Track</span></a>
+    <nav>
+      <a href="#jobs">Job Postings</a>
+      <a href="#apply">Apply</a>
+      <a href="#applicants">Applicants</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#interviews">Interviews</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">Recruitment workflow, simplified</p>
+        <h1>Never lose a candidate in an overflowing inbox again.</h1>
+        <p>Organize applications, compare qualifications, schedule interviews and track every candidate from first application to final decision &mdash; all in one place.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#jobs">View Open Jobs</a>
+          <a class="btn btn-outline" href="#applicants">Manage Applicants</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>4</strong><span>Open positions</span></div>
+        <div class="stat"><strong>8</strong><span>Applications</span></div>
+        <div class="stat"><strong>3</strong><span>Shortlisted</span></div>
+        <div class="stat"><strong>2</strong><span>Interviews booked</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Job Postings ===== -->
+    <section id="jobs" class="section">
+      <h2>Job Postings</h2>
+      <p class="sub">Open positions currently accepting applications.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">Engineering</span>
+          <h3>Frontend Developer</h3>
+          <p class="meta">Full-time &middot; Remote &middot; 2+ yrs exp.</p>
+          <p>Build responsive interfaces with HTML, CSS and modern frameworks.</p>
+          <a class="btn btn-small" href="#apply">Apply Now</a>
+        </article>
+        <article class="card">
+          <span class="tag">Design</span>
+          <h3>UI/UX Designer</h3>
+          <p class="meta">Full-time &middot; Chandigarh &middot; 1+ yr exp.</p>
+          <p>Design intuitive user flows, wireframes and visual systems.</p>
+          <a class="btn btn-small" href="#apply">Apply Now</a>
+        </article>
+        <article class="card">
+          <span class="tag">Data</span>
+          <h3>Data Analyst</h3>
+          <p class="meta">Full-time &middot; Hybrid &middot; 1&ndash;3 yrs exp.</p>
+          <p>Turn raw data into dashboards and insights for business teams.</p>
+          <a class="btn btn-small" href="#apply">Apply Now</a>
+        </article>
+        <article class="card">
+          <span class="tag">HR</span>
+          <h3>HR Executive</h3>
+          <p class="meta">Full-time &middot; On-site &middot; Fresher welcome</p>
+          <p>Coordinate hiring, onboarding and employee communication.</p>
+          <a class="btn btn-small" href="#apply">Apply Now</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Application Form ===== -->
+    <section id="apply" class="section alt">
+      <h2>Application Submission</h2>
+      <p class="sub">Candidates fill in their profile and resume details here.</p>
+      <form class="form" action="#" method="post">
+        <div class="grid-2">
+          <label>Full Name
+            <input type="text" name="name" placeholder="e.g. Simran Kaur" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="name@example.com" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" placeholder="+91 98765 43210">
+          </label>
+          <label>Applying For
+            <select name="position" required>
+              <option value="">-- Select a position --</option>
+              <option>Frontend Developer</option>
+              <option>UI/UX Designer</option>
+              <option>Data Analyst</option>
+              <option>HR Executive</option>
+            </select>
+          </label>
+          <label>Highest Qualification
+            <input type="text" name="qualification" placeholder="e.g. B.Tech (CSE)">
+          </label>
+          <label>Experience (years)
+            <input type="number" name="experience" min="0" max="40" placeholder="0">
+          </label>
+        </div>
+        <label>Skills
+          <input type="text" name="skills" placeholder="HTML, CSS, JavaScript...">
+        </label>
+        <label>Resume (PDF/DOC)
+          <input type="file" name="resume" accept=".pdf,.doc,.docx">
+        </label>
+        <label>Cover Letter
+          <textarea name="cover" rows="4" placeholder="Tell us why you are a good fit..."></textarea>
+        </label>
+        <button class="btn" type="submit">Submit Application</button>
+      </form>
+    </section>
+
+    <!-- ===== Applicants (CSS-only filter) ===== -->
+    <section id="applicants" class="section">
+      <h2>Applicant Management</h2>
+      <p class="sub">Compare candidates and filter by screening status.</p>
+
+      <div class="filter-box">
+        <input type="radio" name="f" id="f-all" checked>
+        <input type="radio" name="f" id="f-new">
+        <input type="radio" name="f" id="f-screening">
+        <input type="radio" name="f" id="f-shortlisted">
+        <input type="radio" name="f" id="f-interview">
+        <input type="radio" name="f" id="f-rejected">
+
+        <div class="chips">
+          <label for="f-all">All</label>
+          <label for="f-new">New</label>
+          <label for="f-screening">Screening</label>
+          <label for="f-shortlisted">Shortlisted</label>
+          <label for="f-interview">Interview</label>
+          <label for="f-rejected">Rejected</label>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Candidate</th><th>Position</th><th>Qualification</th><th>Exp.</th><th>Skills</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-status="new"><td>Simran Kaur</td><td>Frontend Developer</td><td>B.Tech CSE</td><td>2 yrs</td><td>HTML, CSS, React</td><td><span class="badge new">New</span></td></tr>
+              <tr data-status="screening"><td>Rohan Sharma</td><td>Frontend Developer</td><td>BCA</td><td>1 yr</td><td>HTML, CSS, JS</td><td><span class="badge screening">Screening</span></td></tr>
+              <tr data-status="shortlisted"><td>Aman Verma</td><td>UI/UX Designer</td><td>B.Des</td><td>3 yrs</td><td>Figma, Prototyping</td><td><span class="badge shortlisted">Shortlisted</span></td></tr>
+              <tr data-status="interview"><td>Priya Singh</td><td>Data Analyst</td><td>M.Sc Statistics</td><td>2 yrs</td><td>SQL, Excel, Power BI</td><td><span class="badge interview">Interview</span></td></tr>
+              <tr data-status="shortlisted"><td>Harpreet Gill</td><td>Data Analyst</td><td>B.Tech IT</td><td>1 yr</td><td>Python, SQL</td><td><span class="badge shortlisted">Shortlisted</span></td></tr>
+              <tr data-status="rejected"><td>Karan Mehta</td><td>HR Executive</td><td>BBA</td><td>0 yrs</td><td>Communication</td><td><span class="badge rejected">Rejected</span></td></tr>
+              <tr data-status="interview"><td>Neha Arora</td><td>HR Executive</td><td>MBA (HR)</td><td>2 yrs</td><td>Recruitment, Onboarding</td><td><span class="badge interview">Interview</span></td></tr>
+              <tr data-status="new"><td>Jaspreet Singh</td><td>UI/UX Designer</td><td>B.Des</td><td>1 yr</td><td>Figma, Illustrator</td><td><span class="badge new">New</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pipeline ===== -->
+    <section id="pipeline" class="section alt">
+      <h2>Recruitment Pipeline</h2>
+      <p class="sub">Track recruitment progress through each stage.</p>
+      <ol class="pipeline">
+        <li><b>1</b><span>Applied</span></li>
+        <li><b>2</b><span>Screening</span></li>
+        <li><b>3</b><span>Shortlisted</span></li>
+        <li><b>4</b><span>Interview</span></li>
+        <li><b>5</b><span>Selected / Rejected</span></li>
+      </ol>
+    </section>
+
+    <!-- ===== Interviews ===== -->
+    <section id="interviews" class="section">
+      <h2>Interview Scheduling</h2>
+      <p class="sub">Upcoming interviews.</p>
+      <div class="cards">
+        <article class="card schedule">
+          <p class="date">18 Nov 2026 &middot; 11:00 AM</p>
+          <h3>Priya Singh</h3>
+          <p class="meta">Data Analyst &middot; Video call</p>
+          <span class="badge interview">Scheduled</span>
+        </article>
+        <article class="card schedule">
+          <p class="date">19 Nov 2026 &middot; 2:30 PM</p>
+          <h3>Neha Arora</h3>
+          <p class="meta">HR Executive &middot; In office</p>
+          <span class="badge interview">Scheduled</span>
+        </article>
+        <article class="card schedule">
+          <p class="date">21 Nov 2026 &middot; 10:00 AM</p>
+          <h3>Aman Verma</h3>
+          <p class="meta">UI/UX Designer &middot; Video call</p>
+          <span class="badge screening">Pending confirmation</span>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 HireTrack &middot; Recruitment &amp; Applicant Management System</p>
+  </footer>
+
+</body>
+</html>
